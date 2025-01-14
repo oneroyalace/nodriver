@@ -192,7 +192,7 @@ class Tab(Connection):
                  # ignore the return_enclosing_element flag if the found node is NOT a text node but a
                  # regular element (one having a tag) in which case that is exactly what we need.
          :type return_enclosing_element: bool
-        :param timeout: raise timeout exception when after this many seconds nothing is found.
+        :param timeout: returns None after this many seconds if nothing is found.
         :type timeout: float,int
         """
         loop = asyncio.get_running_loop()
@@ -225,7 +225,7 @@ class Tab(Connection):
         :param selector: css selector, eg a[href], button[class*=close], a > img[src]
         :type selector: str
 
-        :param timeout: raise timeout exception when after this many seconds nothing is found.
+        :param timeout: returns None after this many seconds if nothing is found.
         :type timeout: float,int
 
         """
@@ -255,7 +255,7 @@ class Tab(Connection):
         :param text: text to search for. note: script contents are also considered text
         :type text: str
 
-        :param timeout: raise timeout exception when after this many seconds nothing is found.
+        :param timeout: returns empty list after this many seconds if nothing is found.
         :type timeout: float,int
         """
         loop = asyncio.get_running_loop()
@@ -282,7 +282,7 @@ class Tab(Connection):
 
         :param selector: css selector, eg a[href], button[class*=close], a > img[src]
         :type selector: str
-        :param timeout: raise timeout exception when after this many seconds nothing is found.
+        :param timeout: returns empty list after this many seconds if nothing is found.
         :type timeout: float,int
         :param include_frames: whether to include results in iframes.
         :type include_frames: bool
